@@ -72,6 +72,10 @@
    * Remove the gray background on active links in IE 10.
    */
   
+p{
+  margin: 5px 0;
+}
+
   a {
     background-color: transparent;
   }
