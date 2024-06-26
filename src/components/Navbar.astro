@@ -124,11 +124,11 @@
     content: "";
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 3px;
     display: block;
     margin-top: 5px;
     right: 0;
-    background: #ff7a00;
+    background: var(--primary-color);
     transition: width 0.3s ease, background-color 0.3s ease;
   }
 
@@ -136,12 +136,12 @@
   .menu-link.active::after {
     width: 100%;
     left: 0;
-    background: #ff7a00;
+    background: var(--primary-color);
   }
 
   .menu-link:hover,
   .menu-link.active {
-    color: #ff7a00;
+    color: var(--primary-color);
   }
 
   .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -161,7 +161,7 @@
   }
 
   .logo {
-    color: #ff7a00;
+    color: var(--primary-color);
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 15px;

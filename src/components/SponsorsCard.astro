@@ -20,7 +20,7 @@ const { imageUrl, altText, slot } = Astro.props;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin: 0px, 5px, 0px 5px;
+    margin: 0px 10px;
     background: linear-gradient(
       90deg,
       rgba(29, 40, 62, 1) 0%,
@@ -28,10 +28,21 @@ const { imageUrl, altText, slot } = Astro.props;
     );
     padding: 30px;
     box-sizing: border-box;
+    flex: 1 0 var(--width);
+    text-align: center;
+    padding: 2.2rem;
+    transition: transform 0.3s ease-in-out;
   }
+
   .card img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover img {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 </style>
