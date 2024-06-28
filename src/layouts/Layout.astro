@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -14,22 +16,29 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Partner&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body>
-	<main class="app animateUp">
-		<slot />
-	</main>
+    <main class="app animateUp">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
 
 <style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Partner&display=swap");
+
   :root {
     --primary-font: "Poppins", sans-serif;
     --primary-color: #ff7a00;
     --primary-color-hover: #ff7a00;
     --bg-color: #192234;
-    --text-color: #FFFFFF;
+    --text-color: #ffffff;
     --max-width: 1000px;
     --size-header: 80px;
   }
