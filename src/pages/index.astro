@@ -4,6 +4,8 @@ import Card from '../components/Card.astro';
 import SponsorsCard from '../components/SponsorsCard.astro';
 import SponsorsSlide from '../components/SponsorsSlide.astro';
 import Navbar from '../components/Navbar.astro';
+import SponsorSection from '../sections/SponsorSection.astro';
+import CommunitiesSection from '../sections/CommunitiesSection.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -41,14 +43,15 @@ import Navbar from '../components/Navbar.astro';
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
+		<SponsorSection/>
+		<CommunitiesSection/>
 		<ul role="list" class="link-card-grid">
-			<SponsorsSlide type='left' />
-			<!-- <Card
+			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
 				body="Learn how Astro works and explore the official API docs."
-			/> -->
-			<!-- <Card
+			/> 
+			<Card
 				href="https://astro.build/integrations/"
 				title="Integrations"
 				body="Supercharge your project with new frameworks and libraries."
@@ -62,7 +65,7 @@ import Navbar from '../components/Navbar.astro';
 				href="https://astro.build/chat/"
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
-			/> -->
+			/>
 		</ul>
 	</main>
 </Layout>

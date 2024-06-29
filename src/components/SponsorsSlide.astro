@@ -7,22 +7,18 @@ interface Props {
 const { type } = Astro.props;
 
 const sponsors = [
-  { imageUrl: '/assets/sponsor.png', altText: 'Sponsor 1', slot: 'sponsor1' },
-  { imageUrl: '/assets/sponsor.png', altText: 'Sponsor 2', slot: 'sponsor2' },
-  { imageUrl: '/assets/sponsor.png', altText: 'Sponsor 3', slot: 'sponsor3' },
-  { imageUrl: '/assets/sponsor.png', altText: 'Sponsor 4', slot: 'sponsor4' },
-  { imageUrl: '/assets/sponsor.png', altText: 'Sponsor 5', slot: 'sponsor5' },
+  { imageUrl: "/assets/sponsor.png", altText: "Sponsor 1", slot: "sponsor1" },
+  { imageUrl: "/assets/sponsor.png", altText: "Sponsor 2", slot: "sponsor2" },
+  { imageUrl: "/assets/sponsor.png", altText: "Sponsor 3", slot: "sponsor3" },
+  { imageUrl: "/assets/sponsor.png", altText: "Sponsor 4", slot: "sponsor4" },
+  { imageUrl: "/assets/sponsor.png", altText: "Sponsor 5", slot: "sponsor5" },
 ];
 ---
 
 <div class="marquee">
   <div class={type === "left" ? "marquee-content-left" : "marquee-content"}>
-    {sponsors.map(sponsor => (
-      <SponsorsCard {...sponsor} />
-    ))}
-    {sponsors.map(sponsor => (
-      <SponsorsCard {...sponsor} />
-    ))}
+    {sponsors.map((sponsor) => <SponsorsCard {...sponsor} />)}
+    {sponsors.map((sponsor) => <SponsorsCard {...sponsor} />)}
   </div>
 </div>
 
@@ -35,8 +31,9 @@ const sponsors = [
     position: relative;
   }
 
-  .marquee::before, .marquee::after {
-    content: '';
+  .marquee::before,
+  .marquee::after {
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
@@ -46,12 +43,20 @@ const sponsors = [
 
   .marquee::before {
     left: 0;
-    background: linear-gradient(to right,rgba(25, 34, 52, 1), rgba(25, 34, 52, 0.115));
+    background: linear-gradient(
+      to right,
+      rgba(25, 34, 52, 1),
+      rgba(25, 34, 52, 0.115)
+    );
   }
 
   .marquee::after {
     right: 0;
-    background: linear-gradient(to left, rgba(25, 34, 52, 1), rgba(25, 34, 52, 0.115));
+    background: linear-gradient(
+      to left,
+      rgba(25, 34, 52, 1),
+      rgba(25, 34, 52, 0.115)
+    );
   }
 
   .marquee-content {
@@ -81,6 +86,10 @@ const sponsors = [
   }
 
   .marquee-content:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-content-left:hover {
     animation-play-state: paused;
   }
 </style>
