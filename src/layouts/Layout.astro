@@ -1,6 +1,8 @@
 ---
 import "../styles/normalize.css";
 
+import Navbar from '../components/Navbar.astro';
+
 interface Props {
   title: string;
 }
@@ -37,9 +39,10 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <main class="app animateUp">
+      <Navbar></Navbar>
       <slot />
+      <Footer/>
     </main>
-    <Footer />
   </body>
 </html>
 
