@@ -1,0 +1,142 @@
+---
+---
+
+<div class="container">
+  <div class="content">
+    <div class="counter">
+      <div class="responsive1">
+        <div class="card">
+          <div id="days"></div>
+          <div class="label"><h3>Días</h3></div>
+        </div>
+        <div class="card">
+          <div id="hours"></div>
+          <div class="label"><h3>Horas</h3></div>
+        </div>
+      </div>
+      <div class="responsive2">
+        <div class="card">
+          <div id="minutes"></div>
+          <div class="label"><h3>Minutos</h3></div>
+        </div>
+        <div class="card">
+          <div id="seconds"></div>
+          <div class="label"><h3>Segundos</h3></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    color: #000000;
+    text-align: center;
+    margin-top: 3%;
+  }
+  .card {
+    width: 109px;
+    height: 109px;
+    padding: 10px 0px 5px 0px;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    border: 3px solid white;
+    border-radius: 10px;
+  }
+  .card > div {
+    font-size: 40px;
+    animation: fade 3s;
+    font-weight: 700;
+    line-height: 20px;
+    margin-top: 20px;
+    color: white;
+  }
+  .card > div > h3 {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .label {
+    bottom: 0;
+    margin: 0 auto;
+  }
+  .content {
+    width: 80%;
+    margin: 0 auto;
+    border: 0px solid black;
+    z-index: 10;
+  }
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+  li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+  .numbers {
+
+    font-size: 60px;
+    transition: 0.3s;
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+  /* .responsive1 {
+    display: inline-block;
+  } */
+  /* .responsive2 {
+    display: inline-block;
+  } */
+  @media (max-width: 450px) {
+    .container {
+      margin-top: 15%;
+    }
+    .banner {
+      margin-bottom: 30px;
+    }
+    .card {
+      height: 99px;
+      width: 99px;
+    }
+    .card > div {
+      font-size: 30px;
+    }
+    .card > div > h3 {
+      font-size: 15px;
+      margin-top: 0px;
+    }
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<script>
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24;
+
+  let countDown = new Date("Nov 1, 2024 00:00:00").getTime(),
+    x = setInterval(function () {
+      let now = new Date().getTime(),
+        distance = countDown - now;
+
+      document.getElementById("days")!.innerText = Math.floor(distance / day).toString();
+      document.getElementById("hours")!.innerText = Math.floor((distance % day) / hour).toString();
+      document.getElementById("minutes")!.innerText = Math.floor((distance % hour) / minute).toString();
+      document.getElementById("seconds")!.innerText = Math.floor((distance % minute) / second).toString();
+    }, second);
+</script>
