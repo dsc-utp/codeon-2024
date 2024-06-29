@@ -1,170 +1,202 @@
 ---
 import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
 import Layout from "../layouts/Layout.astro";
+import SpeakerSlider from "../components/SpeakerSlider.astro";
 ---
 
 <Layout title="CodeOn 2024">
-  <main>
-    <div class="banner">
-      <div class="banner-info">
-        <div class="logo">
-          <h1>CodeOn 2024</h1>
-        </div>
-        <p>
-          Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas
-          tendencias de la tecnología, este evento se llevará a cabo en la
-          Universidad Tecnológica del Perú, Av. Arequipa.
-        </p>
-      </div>
-      <div class="banner-logo"></div>
-	  <TechnologiesAnimation />
-    </div>
-    <div class="container-register">
-      <div class="register">
-        <p class="title">Registro</p>
-        <p class="subtitle">Haz click en el botón y obtén tu entrada:</p>
-        <div class="button">
-          <div class="icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                d="M15 5l0 2"></path><path d="M15 11l0 2"></path><path
-                d="M15 17l0 2"></path><path
-                d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"
-              ></path></svg
-            >
-          </div>
-          <p>Obtener entrada</p>
-        </div>
-      </div>
-    </div>
-    <br />
-    <div class="agenda">
-      <p class="title">Agenda</p>
-    </div>
-  </main>
+	<main>
+		<div class="banner">
+			<div class="banner-info">
+				<div class="logo">
+					<h1>CodeOn 2024</h1>
+				</div>
+				<p>
+					Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas
+					tendencias de la tecnología, este evento se llevará a cabo
+					en la Universidad Tecnológica del Perú, Av. Arequipa.
+				</p>
+			</div>
+			<div class="banner-logo"></div>
+			<TechnologiesAnimation />
+		</div>
+		<div class="container-register">
+			<div class="register">
+				<p class="title">Registro</p>
+				<p class="subtitle">
+					Haz click en el botón y obtén tu entrada:
+				</p>
+				<div class="button">
+					<div class="icon">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							><path stroke="none" d="M0 0h24v24H0z" fill="none"
+							></path><path d="M15 5l0 2"></path><path
+								d="M15 11l0 2"></path><path d="M15 17l0 2"
+							></path><path
+								d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2"
+							></path></svg
+						>
+					</div>
+					<p>Obtener entrada</p>
+				</div>
+			</div>
+		</div>
+		<br />
+		<div class="agenda">
+			<p class="title">Agenda</p>
+		</div>
+		<br />
+		<div class="speakers">
+			<div class="cabe-speakers">
+				<p class="title">Speakers</p>
+				<p class="sub-title">¡Conoce a nuestros speakers!</p>
+			</div>
+			<SpeakerSlider />
+		</div>
+	</main>
 </Layout>
 
 <style>
-  main {
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
+	main {
+		width: 100%;
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
 
-  .banner,
-  .agenda {
-    width: 100%;
-    max-width: var(--max-width);
-    margin: auto;
-    padding: 1rem;
-  }
+	.banner,
+	.agenda {
+		width: 100%;
+		max-width: var(--max-width);
+		margin: auto;
+		padding: 1rem;
+	}
 
-  .banner {
-	position: relative;
-    height: 100%;
-    min-height: 100vh;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-  }
-  .banner-info,
-  .banner-logo {
-    width: 100%;
-	z-index: 5;
-  }
+	.banner {
+		position: relative;
+		height: 100%;
+		min-height: 100vh;
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: 1fr 1fr;
+	}
+	.banner-info,
+	.banner-logo {
+		width: 100%;
+		z-index: 5;
+	}
 
-  .banner-info .logo {
-    /*display: inline-block;*/
-    background-color: white;
-    color: var(--primary-color);
-    font-size: 30px;
-    font-weight: 900;
-    padding: 0.5rem 1rem;
-    border-bottom-left-radius: 40px;
-    border-top-right-radius: 40px;
-  }
+	.banner-info .logo {
+		background-color: white;
+		color: var(--primary-color);
+		font-size: 30px;
+		font-weight: 900;
+		padding: 0.5rem 1rem;
+		border-bottom-left-radius: 40px;
+		border-top-right-radius: 40px;
+	}
 
-  .banner-info .logo h1 {
-    margin: 0;
-  }
+	.banner-info .logo h1 {
+		margin: 0;
+	}
 
-  .banner-info p {
-    margin: 20px 0;
-  }
+	.banner-info p {
+		margin: 20px 0;
+	}
 
-  .container-register {
-	z-index: 5;
-    width: 100%;
-    background-color: var(--primary-color);
-  }
-  .register {
-    width: 100%;
-    max-width: var(--max-width);
-    padding: 1rem;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .register .title {
-    font-size: 30px;
-    margin: 0;
-    font-weight: bold;
-  }
-  .register .subtitle {
-    font-weight: 300;
-    margin: 0;
-  }
-  .register .button {
-    cursor: pointer;
-    border-radius: 50px;
-    background-color: white;
-    color: #994900;
-    padding: 0.3rem;
-    padding-right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .register .button .icon {
-    width: 30px;
-    height: 30px;
-    padding: 0.2rem;
-    display: inline-block;
-    border-radius: 30px;
-    background-color: #994900;
-    color: white;
-  }
+	.container-register {
+		z-index: 5;
+		width: 100%;
+		background-color: var(--primary-color);
+	}
+	.register {
+		width: 100%;
+		max-width: var(--max-width);
+		padding: 1rem;
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.register .title {
+		font-size: 30px;
+		margin: 0;
+		font-weight: bold;
+	}
+	.register .subtitle {
+		font-weight: 300;
+		margin: 0;
+	}
+	.register .button {
+		cursor: pointer;
+		border-radius: 50px;
+		background-color: white;
+		color: #994900;
+		padding: 0.3rem;
+		padding-right: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+	.register .button .icon {
+		width: 30px;
+		height: 30px;
+		padding: 0.2rem;
+		display: inline-block;
+		border-radius: 30px;
+		background-color: #994900;
+		color: white;
+	}
 
-  .register .button p {
-    font-weight: 500;
-    margin: 0;
-  }
+	.register .button p {
+		font-weight: 500;
+		margin: 0;
+	}
 
-  .agenda {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+	.agenda {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
 
-  .agenda .title {
-    color: var(--primary-color);
-    font-size: 30px;
-    font-weight: 600;
-  }
+	.agenda .title {
+		color: var(--primary-color);
+		font-size: 30px;
+		font-weight: 600;
+	}
+
+	.speakers {
+		padding: 16px;
+	}
+
+	.speakers .cabe-speakers {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.speakers .cabe-speakers .title {
+		color: var(--primary-color);
+		font-size: 30px;
+		font-weight: 600;
+	}
+
+	.speakers .cabe-speakers .sub-title {
+		margin-bottom: 2rem;
+	}
 </style>

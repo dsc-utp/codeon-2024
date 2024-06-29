@@ -1,0 +1,262 @@
+---
+import SpeakerCard from "./SpeakerCard.astro";
+import CustomImage from "./CustomImage.astro";
+
+const speakers = [
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    // Añadir más ponentes aquí...
+];
+
+const left_btn_slider = "/public/assets/icon-park-solid_left-c.svg";
+const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
+---
+
+<div class="slider">
+    <button class="slider-btn prev">
+        <CustomImage
+            mobileImgUrl={left_btn_slider}
+            desktopImgUrl={left_btn_slider}
+            alt="Previous slide"
+            width={24}
+            height={24}
+        />
+    </button>
+    <div class="slider-track">
+        {speakers.map((speaker, index) => (
+            <SpeakerCard key={index} {...speaker} />
+        ))}
+    </div>
+    <button class="slider-btn next">
+        <CustomImage
+            mobileImgUrl={right_btn_slider}
+            desktopImgUrl={right_btn_slider}
+            alt="Next slide"
+            width={24}
+            height={24}
+        />
+    </button>
+</div>
+
+<style>
+    .slider {
+        padding-bottom: 1rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    .slider-btn {
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .slider-track {
+        display: flex;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
+    }
+    .slider-track > * {
+        flex: 0 0 auto;
+        margin: 0 0.5rem;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 1200px) {
+        .slider-track {
+            padding: 0 1rem;
+        }
+        .slider-track > * {
+            flex: 0 0 calc(25% - 1rem);
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        .slider-track {
+            padding: 0 0.75rem;
+        }
+        .slider-track > * {
+            flex: 0 0 calc(33.33% - 1.5rem);
+        }
+    }
+    @media (min-width: 768px) and (max-width: 991px) {
+        .slider-track {
+            padding: 0 0.5rem;
+        }
+        .slider-track > * {
+            flex: 0 0 calc(50% - 1rem);
+        }
+    }
+    @media (max-width: 767px) {
+        .slider-track {
+            padding: 0 0.25rem;
+        }
+        .slider-track > * {
+            flex: 0 0 calc(100% - 0.5rem);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.querySelector('.slider-track');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let currentPosition = 0;
+        let cardWidth = 0;
+        let visibleCardsCount = 0;
+
+        const updateCardWidth = () => {
+            const card = track.querySelector('.speaker-card');
+            if (!card) return 0;
+            const style = window.getComputedStyle(card);
+            return card.offsetWidth + parseFloat(style.marginRight) + parseFloat(style.marginLeft);
+        };
+
+        const getVisibleCardsCount = () => {
+            const width = window.innerWidth;
+            if (width >= 1200) return 4;
+            if (width >= 992) return 3;
+            if (width >= 768) return 2;
+            return 1;
+        };
+
+        const updateTrackPosition = () => {
+            track.scrollTo({ left: currentPosition, behavior: 'smooth' });
+        };
+
+        const resetPositionIfNeeded = () => {
+            const maxScrollPosition = track.scrollWidth - track.clientWidth;
+            if (currentPosition > maxScrollPosition) {
+                currentPosition = maxScrollPosition;
+                updateTrackPosition();
+            }
+        };
+
+        prevBtn.addEventListener('click', () => {
+            cardWidth = updateCardWidth();
+            visibleCardsCount = getVisibleCardsCount();
+            currentPosition = Math.max(currentPosition - cardWidth * visibleCardsCount, 0);
+            updateTrackPosition();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            cardWidth = updateCardWidth();
+            visibleCardsCount = getVisibleCardsCount();
+            const maxScrollPosition = track.scrollWidth - track.clientWidth;
+            currentPosition = Math.min(currentPosition + cardWidth * visibleCardsCount, maxScrollPosition);
+            updateTrackPosition();
+        });
+
+        window.addEventListener('resize', () => {
+            cardWidth = updateCardWidth();
+            visibleCardsCount = getVisibleCardsCount();
+            resetPositionIfNeeded();
+        });
+
+        cardWidth = updateCardWidth();
+        visibleCardsCount = getVisibleCardsCount();
+    });
+</script>
