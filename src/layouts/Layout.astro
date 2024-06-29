@@ -39,82 +39,81 @@ import Footer from "../components/Footer.astro";
     <main class="app animateUp">
       <slot />
     </main>
-
-    <style is:global>
-      :root {
-        --primary-font: "Poppins", sans-serif;
-        --primary-color: #ff7a00;
-        --primary-color-hover: #ff7a00;
-        --bg-color: #192234;
-        --text-color: #ffffff;
-        --max-width: 1000px;
-        --size-header: 80px;
-      }
-      [data-theme="light"] {
-      }
-
-      [data-theme="dark"] {
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: var(--primary-font);
-        scrollbar-gutter: 5px;
-        background-color: var(--bg-color);
-      }
-      .app {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        /*max-width: var(--max-width);*/
-        /*padding: 1rem;*/
-        /*padding-top: calc(var(--size-header));*/
-        margin: 0 auto;
-        min-height: 100vh;
-        position: relative;
-      }
-      .app-main {
-        width: 100%;
-        max-width: var(--max-width);
-        padding: 1rem;
-        margin: 0 auto;
-      }
-      a {
-        text-decoration: none;
-      }
-      /*------------SCROLL----------------*/
-      ::-webkit-scrollbar {
-        width: 0.3rem;
-        background-color: rgb(255, 255, 255);
-        border-radius: 0.5rem;
-      }
-      ::-webkit-scrollbar-thumb {
-        background-color: var(--primary-color-hover);
-        border-radius: 0.5rem;
-      }
-      /*------------Animates----------------*/
-      .animateUp {
-        animation: animateUp 1s;
-      }
-
-      @keyframes animateUp {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-
     <Footer />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --primary-font: "Poppins", sans-serif;
+    --primary-color: #ff7a00;
+    --primary-color-hover: #ff7a00;
+    --bg-color: #192234;
+    --text-color: #ffffff;
+    --max-width: 1000px;
+    --size-header: 80px;
+  }
+  [data-theme="light"] {
+  }
+
+  [data-theme="dark"] {
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--primary-font);
+    scrollbar-gutter: 5px;
+    background-color: var(--bg-color);
+  }
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*max-width: var(--max-width);*/
+    /*padding: 1rem;*/
+    /*padding-top: calc(var(--size-header));*/
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+  }
+  .app-main {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  a {
+    text-decoration: none;
+  }
+  /*------------SCROLL----------------*/
+  ::-webkit-scrollbar {
+    width: 0.3rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color-hover);
+    border-radius: 0.5rem;
+  }
+  /*------------Animates----------------*/
+  .animateUp {
+    animation: animateUp 1s;
+  }
+
+  @keyframes animateUp {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

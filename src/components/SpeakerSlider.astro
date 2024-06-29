@@ -122,7 +122,7 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
     </button>
     <div class="slider-track">
         {speakers.map((speaker, index) => (
-            <SpeakerCard key={index} {...speaker} />
+            <SpeakerCard {...speaker} />
         ))}
     </div>
     <button class="slider-btn next">
@@ -153,6 +153,7 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
     }
     .slider-track {
         display: flex;
+        gap: 1rem;
         overflow-x: hidden;
         scroll-behavior: smooth;
         box-sizing: border-box;
