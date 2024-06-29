@@ -1,0 +1,80 @@
+---
+interface Props {
+  imageUrl: string;
+  altText: string;
+}
+const { imageUrl, altText } = Astro.props;
+---
+
+<div class="card-container">
+    <div class="card">
+      <img src={imageUrl} alt={altText} class="card-image" />
+    </div>
+  </div>
+  
+  <style>
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 105px;
+      border: 2px solid #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      box-sizing: border-box;
+    }
+  
+    .card:hover {
+      transform: scale(1.05);
+    }
+  
+  
+    .card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+  
+    @media (max-width: 768px) {
+      .card {
+        width: 80%;
+        height: auto;
+      }
+  
+      .card-image {
+        height: 200px;
+      }
+  
+      .card-content {
+        padding: 15px;
+      }
+
+    }
+  
+    @media (max-width: 480px) {
+      .card {
+        width: 100%;
+        height: auto;
+      }
+  
+      .card-image {
+        height: 150px;
+      }
+  
+      .card-content {
+        padding: 10px;
+      }
+
+    }
+  </style>
+  
