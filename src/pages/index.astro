@@ -67,9 +67,13 @@ import PartnerSection from "../sections/PartnerSection.astro";
     <div class="call-speakers">
       <p class="title">Call for speakers</p>
       <p class="sub-title">¿Deseas ser speaker en nuestro evento?</p>
-	  <button class="btn">Enviar charla</button>
+      <button class="btn">Enviar charla</button>
     </div>
-	<PartnerSection/>
+    <div class="patners">
+      <p class="title">Sponsors</p>
+      <p class="sub-title">¡Gracias a ellos hacemos posible el evento!</p>
+      <PartnerSection />
+    </div>
     <SponsorSection />
     <CommunitiesSection />
     <br />
@@ -87,15 +91,16 @@ import PartnerSection from "../sections/PartnerSection.astro";
     line-height: 1.6;
   }
 
-	.banner,
-	.agenda,
+  .banner,
+  .agenda,
   .speakers,
-	.call-speakers{
-		width: 100%;
-		max-width: var(--max-width);
-		margin: auto;
-		padding: 1rem;
-	}
+  .call-speakers,
+  .patners {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+  }
 
   .banner {
     position: relative;
@@ -155,6 +160,7 @@ import PartnerSection from "../sections/PartnerSection.astro";
     font-weight: 300;
     margin: 0;
   }
+
   .register .button {
     cursor: pointer;
     border-radius: 50px;
@@ -189,28 +195,36 @@ import PartnerSection from "../sections/PartnerSection.astro";
     flex-direction: column;
   }
 
+  .patners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .agenda .title,
-  .call-speakers .title {
+  .call-speakers .title,
+  .patners .title {
     color: var(--primary-color);
     font-size: 30px;
     font-weight: 600;
   }
   .call-speakers {
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  .call-speakers .btn{
-	padding: 0.8rem 3rem;
-	background-color: var(--primary-color);
-	border-radius: 20px;
-	color: var(--text-color);
-	font-size: 20px;
-	outline: none;
-	border: none;
-	cursor: pointer;
-	margin: 10px 0;
+  .call-speakers .btn {
+    padding: 0.8rem 3rem;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
   }
 
   .speakers .cabe-speakers {
