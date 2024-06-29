@@ -20,16 +20,12 @@ const partners = [
 
 <style>
   .container {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* Ajusta el espacio entre las tarjetas según sea necesario */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Ajusta el espacio entre las tarjetas según sea necesario */
     margin: 0 auto; /* Centra el contenedor */
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

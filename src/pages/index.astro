@@ -53,9 +53,6 @@ import PartnerSection from "../sections/PartnerSection.astro";
     </div>
     <br />
     <Count />
-    <div class="agenda">
-      <p class="title">Agenda</p>
-    </div>
     <br />
     <div class="speakers">
       <div class="cabe-speakers">
@@ -72,11 +69,15 @@ import PartnerSection from "../sections/PartnerSection.astro";
     <div class="patners">
       <p class="title">Sponsors</p>
       <p class="sub-title">¡Gracias a ellos hacemos posible el evento!</p>
+      <br>
       <PartnerSection />
     </div>
     <SponsorSection />
     <CommunitiesSection />
     <br />
+    <div class="agenda">
+      <p class="title">Agenda</p>
+    </div>
     <br />
     <br />
   </main>
@@ -106,10 +107,9 @@ import PartnerSection from "../sections/PartnerSection.astro";
     position: relative;
     height: 100%;
     min-height: 100vh;
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 1fr 1fr;
   }
   .banner-info,
   .banner-logo {
@@ -158,6 +158,7 @@ import PartnerSection from "../sections/PartnerSection.astro";
   }
   .register .subtitle {
     font-weight: 300;
+    text-align: center;
     margin: 0;
   }
 
@@ -240,7 +241,19 @@ import PartnerSection from "../sections/PartnerSection.astro";
     font-weight: 600;
   }
 
+  .sub-title {
+    text-align: center;
+  }
+
   .speakers .cabe-speakers .sub-title {
     margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  @media (max-width: 500px) {
+    .banner {
+      flex-direction: column;
+      padding: 1rem;
+    }
   }
 </style>

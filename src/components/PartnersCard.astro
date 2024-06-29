@@ -29,7 +29,6 @@ const { imageUrl, altText } = Astro.props;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 20px;
   }
 
   .card {
@@ -41,8 +40,8 @@ const { imageUrl, altText } = Astro.props;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
     box-sizing: border-box;
+    cursor: pointer;
   }
 
   .card-content:hover {
@@ -56,6 +55,7 @@ const { imageUrl, altText } = Astro.props;
     text-align: center;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s;
   }
 
   @media (max-width: 768px) {
