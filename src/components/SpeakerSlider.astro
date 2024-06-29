@@ -103,6 +103,26 @@ const speakers = [
             linkedin: "https://www.linkedin.com/in/cristiandaos",
         },
     },
+    {
+        imageUrl: "/public/assets/speakersImage/CristianOscco_Image.png",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
+    {
+        imageUrl: "/public/assets/github_orange.svg",
+        name: "Cristian Oscco",
+        role: "Frontend Developer | GCP | CEO Edomo",
+        socialLinks: {
+            instagram: "https://www.instagram.com/cristiandaos",
+            github: "https://github.com/cristiandaos",
+            linkedin: "https://www.linkedin.com/in/cristiandaos",
+        },
+    },
     // Añadir más ponentes aquí...
 ];
 
@@ -122,7 +142,7 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
     </button>
     <div class="slider-track">
         {speakers.map((speaker, index) => (
-            <SpeakerCard {...speaker} />
+            <SpeakerCard key={index} {...speaker} />
         ))}
     </div>
     <button class="slider-btn next">
@@ -153,7 +173,6 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
     }
     .slider-track {
         display: flex;
-        gap: 1rem;
         overflow-x: hidden;
         scroll-behavior: smooth;
         box-sizing: border-box;

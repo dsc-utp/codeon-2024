@@ -3,9 +3,12 @@
 import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
 import Layout from "../layouts/Layout.astro";
 import SpeakerSlider from "../components/SpeakerSlider.astro";
+
+import SponsorsCard from '../components/SponsorsCard.astro';
+import SponsorsSlide from '../components/SponsorsSlide.astro';
+import Navbar from '../components/Navbar.astro';
 import SponsorSection from '../sections/SponsorSection.astro';
 import CommunitiesSection from '../sections/CommunitiesSection.astro';
-import Count from '../components/Counter.astro'
 ---
 
 <Layout title="CodeOn 2024">
@@ -55,8 +58,6 @@ import Count from '../components/Counter.astro'
 			</div>
 		</div>
 		<br />
-		<!-- AGREGO CONTADOR -->
-		<Count />
 		<div class="agenda">
 			<p class="title">Agenda</p>
 		</div>
@@ -76,7 +77,6 @@ import Count from '../components/Counter.astro'
 
 <style>
 	main {
-		background: linear-gradient(to bottom, #0D121D, #273551, #171A20);
 		width: 100%;
 		color: white;
 		font-size: 20px;
@@ -84,8 +84,7 @@ import Count from '../components/Counter.astro'
 	}
 
 	.banner,
-	.agenda,
-	.speakers{
+	.agenda{
 		width: 100%;
 		max-width: var(--max-width);
 		margin: auto;
@@ -188,6 +187,14 @@ import Count from '../components/Counter.astro'
 		color: var(--primary-color);
 		font-size: 30px;
 		font-weight: 600;
+	}
+
+	.speakers {
+		/*margin: 16px;*/
+		width: 100%;
+		max-width: 1020px;
+		margin: auto;
+		padding: 1rem;
 	}
 
 	.speakers .cabe-speakers {
