@@ -8,9 +8,10 @@ interface Props {
     alt: string;
     width: number;
     height?: number; // height opcional
+    class_name? : string; // class opcional
 }
 
-const { mobileImgUrl, desktopImgUrl, alt, width, height } = Astro.props;
+const { mobileImgUrl, desktopImgUrl, alt, width, height, class_name } = Astro.props;
 ---
 
 <picture>
@@ -22,5 +23,6 @@ const { mobileImgUrl, desktopImgUrl, alt, width, height } = Astro.props;
         width={width}
         height={height ? height : "auto"}
         loading="lazy"
+        class_name:{class_name}
     />
 </picture>

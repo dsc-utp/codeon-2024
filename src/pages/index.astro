@@ -5,6 +5,7 @@ import SpeakerSlider from "../components/SpeakerSlider.astro";
 import SponsorSection from "../sections/SponsorSection.astro";
 import CommunitiesSection from "../sections/CommunitiesSection.astro";
 import Count from "../components/Counter.astro";
+import PartnerSection from "../sections/PartnerSection.astro";
 ---
 
 <Layout title="CodeOn 2024">
@@ -68,6 +69,11 @@ import Count from "../components/Counter.astro";
       <p class="sub-title">¿Deseas ser speaker en nuestro evento?</p>
       <button class="btn">Enviar charla</button>
     </div>
+    <div class="patners">
+      <p class="title">Sponsors</p>
+      <p class="sub-title">¡Gracias a ellos hacemos posible el evento!</p>
+      <PartnerSection />
+    </div>
     <SponsorSection />
     <CommunitiesSection />
     <br />
@@ -88,7 +94,8 @@ import Count from "../components/Counter.astro";
   .banner,
   .agenda,
   .speakers,
-  .call-speakers {
+  .call-speakers,
+  .patners {
     width: 100%;
     max-width: var(--max-width);
     margin: auto;
@@ -153,6 +160,7 @@ import Count from "../components/Counter.astro";
     font-weight: 300;
     margin: 0;
   }
+
   .register .button {
     cursor: pointer;
     border-radius: 50px;
@@ -187,8 +195,16 @@ import Count from "../components/Counter.astro";
     flex-direction: column;
   }
 
+  .patners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .agenda .title,
-  .call-speakers .title {
+  .call-speakers .title,
+  .patners .title {
     color: var(--primary-color);
     font-size: 30px;
     font-weight: 600;

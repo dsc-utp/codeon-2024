@@ -1,0 +1,90 @@
+---
+import CustomImage from "./CustomImage.astro";
+
+interface Props {
+  imageUrl: string;
+  altText: string;
+}
+
+const { imageUrl, altText } = Astro.props;
+---
+
+<div class="card-container">
+  <d class="card">
+    <div class="card-content">
+      <CustomImage
+        mobileImgUrl={imageUrl}
+        desktopImgUrl={imageUrl}
+        alt={altText}
+        width={200}
+        class_name="card-image"
+      />
+    </div>
+  </d>
+</div>
+
+<style>
+  .card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 105px;
+    border: 2px solid #ffa800;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    box-sizing: border-box;
+  }
+
+  .card-content:hover {
+    transform: scale(1.05);
+  }
+
+  .card-content {
+    display: flex;
+    justify-items: center;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 80%;
+      height: auto;
+    }
+
+    .card-image {
+      width: 200px;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-image {
+      width: 150px;
+    }
+
+    .card-content {
+      padding: 10px;
+    }
+  }
+</style>

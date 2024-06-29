@@ -1,0 +1,35 @@
+---
+import PartnersCard from "../components/PartnersCard.astro";
+
+import sponser1 from "/public/assets/sponsor.png"
+
+const partners = [
+  { imageUrl: sponser1, altText: "Sponsor 1" },
+  { imageUrl: sponser1, altText: "Sponsor 3" },
+  { imageUrl: sponser1, altText: "Sponsor 4" },
+  { imageUrl: sponser1, altText: "Sponsor 5" },
+  { imageUrl: sponser1, altText: "Sponsor 5" },
+];
+---
+
+<section class="container">
+  {partners.map((partner) => (
+    <PartnersCard {...partner} />
+  ))}
+</section>
+
+<style>
+  .container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Ajusta el espacio entre las tarjetas según sea necesario */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
