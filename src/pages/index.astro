@@ -10,7 +10,7 @@ import PartnerSection from "../sections/PartnerSection.astro";
 
 <Layout title="CodeOn 2024">
   <main>
-    <div class="banner">
+    <div class="banner" id="init">
       <div class="banner-info">
         <div class="logo">
           <h1>CodeOn 2024</h1>
@@ -24,7 +24,7 @@ import PartnerSection from "../sections/PartnerSection.astro";
       <div class="banner-logo"></div>
       <TechnologiesAnimation />
     </div>
-    <div class="container-register">
+    <div class="container-register" id="register">
       <div class="register">
         <p class="title">Registro</p>
         <p class="subtitle">Haz click en el botón y obtén tu entrada:</p>
@@ -53,11 +53,11 @@ import PartnerSection from "../sections/PartnerSection.astro";
     </div>
     <br />
     <Count />
-    <div class="agenda">
+    <div class="agenda" id="agenda">
       <p class="title">Agenda</p>
     </div>
     <br />
-    <div class="speakers">
+    <div class="speakers" id="speakers">
       <div class="cabe-speakers">
         <p class="title">Speakers</p>
         <p class="sub-title">¡Conoce a nuestros speakers!</p>
