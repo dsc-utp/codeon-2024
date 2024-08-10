@@ -1,7 +1,7 @@
 ---
 import PartnersCard from "../components/PartnersCard.astro";
 
-import sponser1 from "/public/assets/sponsor.png"
+import sponser1 from "/public/assets/sponsor.png";
 
 const partners = [
   { imageUrl: sponser1, altText: "Sponsor 1" },
@@ -13,9 +13,11 @@ const partners = [
 ---
 
 <section class="container">
-  {partners.map((partner) => (
-    <PartnersCard {...partner} />
-  ))}
+  {
+    partners.map((partner) => (
+      <PartnersCard imageUrl={partner.imageUrl} altText={partner.altText} />
+    ))
+  }
 </section>
 
 <style>

@@ -142,7 +142,7 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
     </button>
     <div class="slider-track">
         {speakers.map((speaker, index) => (
-            <SpeakerCard key={index} {...speaker} />
+            <SpeakerCard {...speaker} />
         ))}
     </div>
     <button class="slider-btn next">
@@ -230,10 +230,10 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
         let visibleCardsCount = 0;
 
         const updateCardWidth = () => {
-            const card = track.querySelector('.speaker-card');
+            const card = track?.querySelector('.speaker-card');
             if (!card) return 0;
             const style = window.getComputedStyle(card);
-            return card.offsetWidth + parseFloat(style.marginRight) + parseFloat(style.marginLeft);
+            return (card as HTMLElement).offsetWidth + parseFloat(style.marginRight) + parseFloat(style.marginLeft);
         };
 
         const getVisibleCardsCount = () => {
@@ -245,28 +245,28 @@ const right_btn_slider = "/public/assets/icon-park-solid_right-c.svg";
         };
 
         const updateTrackPosition = () => {
-            track.scrollTo({ left: currentPosition, behavior: 'smooth' });
+            track?.scrollTo({ left: currentPosition, behavior: 'smooth' });
         };
 
         const resetPositionIfNeeded = () => {
-            const maxScrollPosition = track.scrollWidth - track.clientWidth;
+            const maxScrollPosition = (track?.scrollWidth ?? 0) - (track?.clientWidth?? 0);
             if (currentPosition > maxScrollPosition) {
                 currentPosition = maxScrollPosition;
                 updateTrackPosition();
             }
         };
 
-        prevBtn.addEventListener('click', () => {
+        prevBtn?.addEventListener('click', () => {
             cardWidth = updateCardWidth();
             visibleCardsCount = getVisibleCardsCount();
             currentPosition = Math.max(currentPosition - cardWidth * visibleCardsCount, 0);
             updateTrackPosition();
         });
 
-        nextBtn.addEventListener('click', () => {
+        nextBtn?.addEventListener('click', () => {
             cardWidth = updateCardWidth();
             visibleCardsCount = getVisibleCardsCount();
-            const maxScrollPosition = track.scrollWidth - track.clientWidth;
+            const maxScrollPosition = (track?.scrollWidth ?? 0) - (track?.clientWidth?? 0);
             currentPosition = Math.min(currentPosition + cardWidth * visibleCardsCount, maxScrollPosition);
             updateTrackPosition();
         });

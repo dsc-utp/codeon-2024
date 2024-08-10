@@ -222,9 +222,9 @@
 
 <script>
   document.querySelectorAll('.menu-link').forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
       document.querySelectorAll('.menu-link').forEach(item => item.classList.remove('active'));
-      this.classList.add('active');
+      (e.target as HTMLElement).classList.add('active');
     });
   });
 </script>
