@@ -15,7 +15,7 @@ const { title, subtitle, buttonText, buttonLink, id } = Astro.props;
 <div class="call-to-action" id={id}>
   <p class="title">{title}</p>
   <p class="sub-title">{subtitle}</p>
-  <a href={buttonLink} class="btn">{buttonText}</a>
+  <a href={buttonLink} target="_blank" class="btn">{buttonText}</a>
 </div>
 
 <style>
