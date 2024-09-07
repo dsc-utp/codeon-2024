@@ -7,24 +7,14 @@ import CommunitiesSection from "../sections/CommunitiesSection.astro";
 import Count from "../components/Counter.astro";
 import PartnerSection from "../sections/PartnerSection.astro";
 import CallToAction from "../components/CallToAction.astro";
+import BannerSection from "../sections/banner.section.astro";
+import BannerInfoSection from "../sections/banner-info.section.astro";
 ---
 
 <Layout title="CodeOn 2024">
   <main>
-    <div class="banner" id="init">
-      <div class="banner-info">
-        <div class="logo">
-          <h1>CodeOn 2024</h1>
-        </div>
-        <p>
-          Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas
-          tendencias de la tecnología, este evento se llevará a cabo en la
-          Universidad Tecnológica del Perú, Av. Petit Thouars.
-        </p>
-      </div>
-      <div class="banner-logo"></div>
-      <TechnologiesAnimation />
-    </div>
+    <BannerSection/>
+    <BannerInfoSection/>
     <div class="container-register" id="register">
       <div class="register">
         <p class="title">Registro</p>
