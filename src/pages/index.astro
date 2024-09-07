@@ -6,11 +6,12 @@ import SponsorSection from "../sections/SponsorSection.astro";
 import CommunitiesSection from "../sections/CommunitiesSection.astro";
 import Count from "../components/Counter.astro";
 import PartnerSection from "../sections/PartnerSection.astro";
+import CallToAction from "../components/CallToAction.astro";
 ---
 
 <Layout title="CodeOn 2024">
   <main>
-    <div class="banner">
+    <div class="banner" id="init">
       <div class="banner-info">
         <div class="logo">
           <h1>CodeOn 2024</h1>
@@ -24,7 +25,7 @@ import PartnerSection from "../sections/PartnerSection.astro";
       <div class="banner-logo"></div>
       <TechnologiesAnimation />
     </div>
-    <div class="container-register">
+    <div class="container-register" id="register">
       <div class="register">
         <p class="title">Registro</p>
         <p class="subtitle">Haz click en el botón y obtén tu entrada:</p>
@@ -47,37 +48,56 @@ import PartnerSection from "../sections/PartnerSection.astro";
               ></path></svg
             >
           </div>
-          <p>Obtener entrada</p>
+          <a
+            href="https://lu.ma/teg3ei2k"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit;"
+          >
+            <p>Obtener entrada</p>
+          </a>
         </div>
       </div>
     </div>
     <br />
     <Count />
+    <!-- TODO: DESCOMENTAR CUANDO SE TENGA AGENDA -->
+    <!-- <div class="agenda" id="agenda">
+      <p class="title">Agenda</p>
+    </div> -->
     <br />
-    <div class="speakers">
-      <div class="cabe-speakers">
+    <!-- TODO: DESCOMENTAR CUANDO HAYA SPEAKERS - FALTA RESPONSIVE DE CARDS SPEAKERS -->
+    <div class="speakers" id="speakers">
+      <!-- <div class="cabe-speakers">
         <p class="title">Speakers</p>
         <p class="sub-title">¡Conoce a nuestros speakers!</p>
       </div>
-      <SpeakerSlider />
-    </div>
-    <div class="call-speakers">
-      <p class="title">Call for speakers</p>
-      <p class="sub-title">¿Deseas ser speaker en nuestro evento?</p>
-      <button class="btn">Enviar charla</button>
+      <SpeakerSlider /> -->
+      <CallToAction
+        title="Call for speakers"
+        subtitle="¿Deseas ser speaker en nuestro evento?"
+        buttonText="Contáctanos"
+        buttonLink="#link-to-submit-talk"
+      />
     </div>
     <div class="patners">
-      <p class="title">Sponsors</p>
+      <p class="title">Patners</p>
       <p class="sub-title">¡Gracias a ellos hacemos posible el evento!</p>
-      <br>
+      <br />
       <PartnerSection />
     </div>
-    <SponsorSection />
+    <!-- TODO: COMENTAR SECCIÓN SPONSOR POR AHORA -->
+    <!-- <SponsorSection /> -->
+    <!-- CALL SponsorS -->
+    <CallToAction
+      id="sponsors"
+      title="Quiero ser Sponsor"
+      subtitle="¡Únete como sponsor y destaca tu marca en nuestro evento!"
+      buttonText="Conviértete en Sponsor"
+      buttonLink="https://drive.google.com/file/d/1ofgasD1Agh9IJCDCW9Avn01MPpjVHQku/view"
+    />
     <CommunitiesSection />
     <br />
-    <div class="agenda">
-      <p class="title">Agenda</p>
-    </div>
     <br />
     <br />
   </main>

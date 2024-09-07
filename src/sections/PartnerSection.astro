@@ -1,24 +1,28 @@
 ---
-import PartnersCard from "../components/PartnersCard.astro";
-
 import sponser1 from "/public/assets/sponsor.png";
+import PartnersCard from "../components/PartnersCard.astro";
 
 const partners = [
   { imageUrl: sponser1, altText: "Sponsor 1" },
+  { imageUrl: sponser1, altText: "Sponsor 2" },
   { imageUrl: sponser1, altText: "Sponsor 3" },
   { imageUrl: sponser1, altText: "Sponsor 4" },
-  { imageUrl: sponser1, altText: "Sponsor 5" },
   { imageUrl: sponser1, altText: "Sponsor 5" },
 ];
 ---
 
-<section class="container">
-  {
-    partners.map((partner) => (
+<div>
+  <div class="utp-logo-container">
+    <p>Patrocinador Oficial</p>
+    <img src="/public/assets/logo_utp.png" alt="utp-logo"/>
+  </div>
+  <!-- TODO: AGREGAR PARTNERS -->
+  <!-- <section class="container">
+    {partners.map((partner) => (
       <PartnersCard imageUrl={partner.imageUrl} altText={partner.altText} />
-    ))
-  }
-</section>
+    ))}
+  </section> -->
+</div>
 
 <style>
   .container {
@@ -27,7 +31,34 @@ const partners = [
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem; /* Ajusta el espacio entre las tarjetas según sea necesario */
-    margin: 0 auto; /* Centra el contenedor */
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .utp-logo-container {
+    margin: 10px 0px 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .utp-logo-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+  }
+
+  .utp-logo-container p {
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .utp-logo-container img {
+      max-width: 300px;
+    }
   }
 </style>

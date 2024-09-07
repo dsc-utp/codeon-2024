@@ -1,0 +1,53 @@
+---
+// CallToAction.astro
+
+export interface Props {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonLink: string;
+  id? : string;
+}
+
+const { title, subtitle, buttonText, buttonLink, id } = Astro.props;
+---
+
+<div class="call-to-action" id={id}>
+  <p class="title">{title}</p>
+  <p class="sub-title">{subtitle}</p>
+  <a href={buttonLink} class="btn">{buttonText}</a>
+</div>
+
+<style>
+  .call-to-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem 0;
+  }
+
+  .call-to-action .title {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .call-to-action .sub-title {
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .call-to-action .btn {
+    padding: 0.6rem 3rem;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    color: var(--text-color);
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+</style>
