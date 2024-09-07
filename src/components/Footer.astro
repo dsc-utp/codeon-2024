@@ -19,7 +19,7 @@ import twitterIcon from "/public/assets/twitter_x_icon.svg";
                 mobileImgUrl={iconDSC}
                 desktopImgUrl={iconDSC}
                 alt="DSC UTP logo"
-                width={260}
+                width={200}
             />
         </div>
         <div class="contact">
@@ -48,8 +48,8 @@ import twitterIcon from "/public/assets/twitter_x_icon.svg";
                         mobileImgUrl={linkedinIcon}
                         desktopImgUrl={linkedinIcon}
                         alt="LinkedIn icono"
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                     />
                 </a>
                 <a href={twitterURL} target="_blank">
@@ -57,8 +57,8 @@ import twitterIcon from "/public/assets/twitter_x_icon.svg";
                         mobileImgUrl={twitterIcon}
                         desktopImgUrl={twitterIcon}
                         alt="Twitter icono"
-                        width={24}
-                        height={24}
+                        width={20}
+                        height={20}
                     />
                 </a>
             </div>
@@ -90,20 +90,23 @@ import twitterIcon from "/public/assets/twitter_x_icon.svg";
 
     .contact {
         display: flex;
+        justify-content: center;
         align-items: center;
+        gap: 1rem;
     }
 
     .contact p {
-        margin-right: 1em;
+        margin: 0;
     }
 
     .social-icons {
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 0.5em;
     }
 
     .social-icons a img {
-        max-height: 24px;
         width: auto;
     }
 
