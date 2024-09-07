@@ -12,7 +12,8 @@
       <div><a href="#" class="menu-link">Speakers</a></div>
       <div><a href="#" class="menu-link">Sponsors</a></div>
     </div>
-    <h1 class="logo">CodeOn 2024</h1>
+    <!-- <h1 class="logo">CodeOn 2024</h1> -->
+    <img src="/public/assets/header_logo.svg" class="logo" />
   </div>
 </nav>
 
@@ -129,7 +130,9 @@
     margin-top: 5px;
     right: 0;
     background: var(--primary-color);
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition:
+      width 0.3s ease,
+      background-color 0.3s ease;
   }
 
   .menu-link:hover::after,
@@ -161,10 +164,9 @@
   }
 
   .logo {
-    color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-left: 15px;
+    width: 50px;
+    height: auto;
+    margin: 0px 0px 0px 10px;
   }
 
   @media (min-width: 769px) {
@@ -206,10 +208,8 @@
     }
 
     .logo {
-      order: 1;
-      margin: 0px 0px 0px 40px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      width: 40px;
+      margin: 0px 0px 0px 20px;
     }
 
     @media (min-width: 1090px) {
@@ -221,10 +221,12 @@
 </style>
 
 <script>
-  document.querySelectorAll('.menu-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      document.querySelectorAll('.menu-link').forEach(item => item.classList.remove('active'));
-      (e.target as HTMLElement).classList.add('active');
+  document.querySelectorAll(".menu-link").forEach((link) => {
+    link.addEventListener("click", function (e) {
+      document
+        .querySelectorAll(".menu-link")
+        .forEach((item) => item.classList.remove("active"));
+      (e.target as HTMLElement).classList.add("active");
     });
   });
 </script>
