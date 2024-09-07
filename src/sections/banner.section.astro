@@ -20,11 +20,9 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
       alt="codeon-slice"
     />
     <p class="subtitle">09 de noviembre</p>
-    <Image
+    <img
       class="codeonlogo"
       src="/assets/banner_logo.svg"
-      width={400}
-      height={100}
       alt="CodeOn2024"
     />
     <button class="codeon-btn"> Auditorio UTP, Av. Petit Thouars </button>
@@ -38,7 +36,7 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
     max-width: var(--max-width);
     margin: auto;
     height: 100%;
-    min-height: 90vh;
+    min-height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -52,12 +50,16 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 1rem;
   }
   .subtitle {
     font-size: 26px;
     font-weight: 600;
   }
   .codeonlogo {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem 0;
   }
   .slice-left,
   .slice-right {
@@ -71,7 +73,7 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
     top: 0;
     right: 0;
   }
-  .codeon-btn{
+  .codeon-btn {
     margin: 10px 0;
     padding: 0.6rem;
     cursor: pointer;
@@ -81,5 +83,11 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
     color: white;
     border-radius: 20px;
     background: linear-gradient(to right, #ff7a00, #c25f02);
+  }
+  @media (max-width: 700px) {
+    .slice-left,
+    .slice-right {
+      display: none;
+    }
   }
 </style>

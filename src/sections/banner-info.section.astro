@@ -1,18 +1,14 @@
----
-import { Image } from "astro:assets";
----
+
 
 <div class="info-banner">
-  <p>
+  <p class="info">
     Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
     la tecnología, este evento se llevará a cabo en la Universidad Tecnológica
     del Perú, Av. Petit Thouars.
   </p>
-  <Image
+  <img
     class="photo-comunity"
     src="/assets/comunity-picture.jpg"
-    width={580}
-    height={400}
     alt="DSC COMUNIDAD"
   />
 </div>
@@ -26,8 +22,21 @@ import { Image } from "astro:assets";
     justify-content: center;
     gap: 1rem;
     margin: 2rem auto;
+    padding: 1rem;
+  }
+  .info{
+    width: 100%;
+    max-width: 400px;
   }
   .photo-comunity{
+    width: 100%;
+    max-width: 500px;
     border-radius: 10px;
+  }
+  @media (max-width: 1000px) {
+    .info-banner {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
   }
 </style>
