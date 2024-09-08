@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <div class="container">
@@ -90,7 +91,7 @@
   }
   .responsive2 {
     display: inline-block;
-  } 
+  }
   @media (max-width: 450px) {
     .container {
       margin-top: 15%;
@@ -130,13 +131,21 @@
     day = hour * 24;
 
   let countDown = new Date("Nov 9, 2024 08:00:00").getTime();
-    x = setInterval(function () {
-      let now = new Date().getTime(),
-        distance = countDown - now;
+  setInterval(function () {
+    let now = new Date().getTime(),
+      distance = countDown - now;
 
-      document.getElementById("days")!.innerText = Math.floor(distance / day).toString();
-      document.getElementById("hours")!.innerText = Math.floor((distance % day) / hour).toString();
-      document.getElementById("minutes")!.innerText = Math.floor((distance % hour) / minute).toString();
-      document.getElementById("seconds")!.innerText = Math.floor((distance % minute) / second).toString();
-    }, second);
+    document.getElementById("days")!.innerText = Math.floor(
+      distance / day
+    ).toString();
+    document.getElementById("hours")!.innerText = Math.floor(
+      (distance % day) / hour
+    ).toString();
+    document.getElementById("minutes")!.innerText = Math.floor(
+      (distance % hour) / minute
+    ).toString();
+    document.getElementById("seconds")!.innerText = Math.floor(
+      (distance % minute) / second
+    ).toString();
+  }, second);
 </script>
