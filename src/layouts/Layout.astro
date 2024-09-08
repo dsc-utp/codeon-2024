@@ -1,7 +1,7 @@
 ---
 import "../styles/normalize.css";
 
-import Navbar from '../components/Navbar.astro';
+import Navbar from "../components/Navbar.astro";
 
 interface Props {
   title: string;
@@ -11,20 +11,58 @@ const { title } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
+import { MY_URL } from "../config";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
+    <meta
+      name="description"
+      content="Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
     la tecnología, este evento se llevará a cabo en la Universidad Tecnológica
-    del Perú, Av. Petit Thouars." />
+    del Perú, Av. Petit Thouars."
+    />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="shortcut icon" href="/public/favicon.svg" type="image/x-icon">
-    <link rel="icon" href="/public/favicon-96x96.png" sizes="96x96" type="image/png">
-    <link rel="icon" href="/public/favicon.svg" sizes="any" type="image/svg+xml">
+    <link rel="shortcut icon" href="/public/favicon.svg" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="/public/favicon-96x96.png"
+      sizes="96x96"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/public/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+
+    <!-- OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={MY_URL} />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
+    la tecnología, este evento se llevará a cabo en la Universidad Tecnológica
+    del Perú, Av. Petit Thouars."
+    />
+    <meta property="og:image" content={`${MY_URL}assets/web-preview.png`} />
+
+    <!-- TWITER -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:site" content="@dsc_utp" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
+    la tecnología, este evento se llevará a cabo en la Universidad Tecnológica
+    del Perú, Av. Petit Thouars." />
+    <meta
+      property="twitter:image"
+      content={`${MY_URL}assets/web-preview.png`}
+    />
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,9 +83,9 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <main class="app animateUp">
-      <Navbar></Navbar>
+      <Navbar />
       <slot />
-      <Footer/>
+      <Footer />
     </main>
   </body>
 </html>
