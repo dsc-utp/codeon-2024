@@ -8,19 +8,20 @@ interface Props {
     alt: string;
     width: number;
     height?: number; // height opcional
+    class_name? : string; // class opcional
 }
 
-const { mobileImgUrl, desktopImgUrl, alt, width, height } = Astro.props;
+const { mobileImgUrl, desktopImgUrl, alt, width, height, class_name = '' } = Astro.props;
 ---
 
 <picture>
-    <source media="(max-width: 799px)" srcset={mobileImgUrl.src} />
-    <source media="(min-width: 800px)" srcset={desktopImgUrl.src} />
+    <source media="(max-width: 799px)" srcset={(mobileImgUrl as ImageMetadata).src} />
+    <source media="(min-width: 800px)" srcset={(desktopImgUrl as ImageMetadata).src} />
     <Image
-        src={desktopImgUrl}
+        src={(desktopImgUrl as ImageMetadata)}
         alt={alt}
         width={width}
-        height={height ? height : "auto"}
+        height={height ? height : "auto" as any}
         loading="lazy"
     />
 </picture>

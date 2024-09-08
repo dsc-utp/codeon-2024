@@ -1,0 +1,94 @@
+---
+import SponsorsCard from "./SponsorsCard.astro";
+
+interface Props {
+  type: string;
+}
+const { type } = Astro.props;
+
+const sponsors = [
+  { imageUrl: "/assets/comunities/IncideTecPerú.png", altText: "IncideTecPerú", slot: "sponsor1" },
+  { imageUrl: "/assets/comunities/quipuml.png", altText: "QuipuML", slot: "sponsor2" },
+  { imageUrl: "/assets/comunities/gdg_callao.svg", altText: "gdg callao", slot: "sponsor3" },
+  { imageUrl: "/assets/comunities/gdgopenlima.png", altText: "gdg open lima", slot: "sponsor4" },
+];
+---
+
+<div class="marquee">
+  <div class={type === "left" ? "marquee-content-left" : "marquee-content"}>
+    {sponsors.map((sponsor) => <SponsorsCard {...sponsor} />)}
+    {sponsors.map((sponsor) => <SponsorsCard {...sponsor} />)}
+  </div>
+</div>
+
+<style>
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 2;
+  }
+
+  .marquee::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(25, 34, 52, 1),
+      rgba(25, 34, 52, 0.115)
+    );
+  }
+
+  .marquee::after {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(25, 34, 52, 1),
+      rgba(25, 34, 52, 0.115)
+    );
+  }
+
+  .marquee-content {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+
+  .marquee-content-left {
+    display: flex;
+    animation: marquee-left 40s linear infinite;
+  }
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee-content-left:hover {
+    animation-play-state: paused;
+  }
+</style>

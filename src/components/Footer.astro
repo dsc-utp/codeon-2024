@@ -13,66 +13,75 @@ import twitterIcon from "/public/assets/twitter_x_icon.svg";
 ---
 
 <footer class="footer">
-    <div class="icon">
-        <CustomImage
-            mobileImgUrl={iconDSC}
-            desktopImgUrl={iconDSC}
-            alt="DSC UTP logo"
-            width={200}
-        />
-    </div>
-    <div class="contact">
-        <p>Síguenos en:</p>
-        <div class="social-icons">
-            <a href={facebookURL} target="_blank">
-                <CustomImage
-                    mobileImgUrl={facebookIcon}
-                    desktopImgUrl={facebookIcon}
-                    alt="Facebook icono"
-                    width={20}
-                    height={20}
-                />
-            </a>
-            <a href={instagramURL} target="_blank">
-                <CustomImage
-                    mobileImgUrl={instagramIcon}
-                    desktopImgUrl={instagramIcon}
-                    alt="Instagram icono"
-                    width={20}
-                    height={20}
-                />
-            </a>
-            <a href={linkedinURL} target="_blank">
-                <CustomImage
-                    mobileImgUrl={linkedinIcon}
-                    desktopImgUrl={linkedinIcon}
-                    alt="LinkedIn icono"
-                    width={20}
-                    height={20}
-                />
-            </a>
-            <a href={twitterURL} target="_blank">
-                <CustomImage
-                    mobileImgUrl={twitterIcon}
-                    desktopImgUrl={twitterIcon}
-                    alt="Twitter icono"
-                    width={20}
-                    height={20}
-                />
-            </a>
+    <div class="box">
+        <div class="icon">
+            <CustomImage
+                mobileImgUrl={iconDSC}
+                desktopImgUrl={iconDSC}
+                alt="DSC UTP logo"
+                width={200}
+            />
+        </div>
+        <div class="contact">
+            <p>Síguenos en:</p>
+            <div class="social-icons">
+                <a href={facebookURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={facebookIcon}
+                        desktopImgUrl={facebookIcon}
+                        alt="Facebook icono"
+                        width={24}
+                        height={24}
+                    />
+                </a>
+                <a href={instagramURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={instagramIcon}
+                        desktopImgUrl={instagramIcon}
+                        alt="Instagram icono"
+                        width={24}
+                        height={24}
+                    />
+                </a>
+                <a href={linkedinURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={linkedinIcon}
+                        desktopImgUrl={linkedinIcon}
+                        alt="LinkedIn icono"
+                        width={20}
+                        height={20}
+                    />
+                </a>
+                <a href={twitterURL} target="_blank">
+                    <CustomImage
+                        mobileImgUrl={twitterIcon}
+                        desktopImgUrl={twitterIcon}
+                        alt="Twitter icono"
+                        width={20}
+                        height={20}
+                    />
+                </a>
+            </div>
         </div>
     </div>
 </footer>
 
 <style>
-    .footer {
+    .footer{
+		width: 100%;
+        background-color: #171A21;
+        color: #fff;
+    }
+    .box {
+        width: 100%;
+		max-width: var(--max-width);
+		margin: auto;
+		padding: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1em 2em;
-        background-color: #111;
-        color: #fff;
-        font-family: "Partner", sans-serif; /* Aplica la fuente Partner */
+        
     }
 
     .icon img {
@@ -81,25 +90,28 @@ import twitterIcon from "/public/assets/twitter_x_icon.svg";
 
     .contact {
         display: flex;
+        justify-content: center;
         align-items: center;
+        gap: 1rem;
     }
 
     .contact p {
-        margin-right: 1em;
+        margin: 0;
     }
 
     .social-icons {
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 0.5em;
     }
 
     .social-icons a img {
-        max-height: 24px;
         width: auto;
     }
 
     @media (max-width: 799px) {
-        .footer {
+        .box {
             flex-direction: column;
             text-align: center;
         }

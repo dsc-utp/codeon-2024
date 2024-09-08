@@ -1,0 +1,42 @@
+
+
+<div class="info-banner">
+  <p class="info">
+    Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
+    la tecnología, este evento se llevará a cabo en la Universidad Tecnológica
+    del Perú, Av. Petit Thouars.
+  </p>
+  <img
+    class="photo-comunity"
+    src="/assets/comunity-picture.jpg"
+    alt="DSC COMUNIDAD"
+  />
+</div>
+
+<style>
+  .info-banner {
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  .info{
+    width: 100%;
+    max-width: 400px;
+  }
+  .photo-comunity{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
+  @media (max-width: 1000px) {
+    .info-banner {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+  }
+</style>

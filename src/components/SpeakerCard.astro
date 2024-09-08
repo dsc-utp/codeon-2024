@@ -1,0 +1,101 @@
+---
+import CustomImage from "./CustomImage.astro";
+
+export interface Props {
+  imageUrl: string;
+  name: string;
+  role: string;
+  socialLinks: {
+    instagram: string;
+    github: string;
+    linkedin: string;
+  };
+}
+
+const { imageUrl, name, role, socialLinks } = Astro.props;
+---
+
+<div class="speaker-card">
+  <img src={imageUrl} alt={name} class="speaker-image" />
+  <h3 class="speaker-name">{name}</h3>
+  <p class="speaker-role">{role}</p>
+  <div class="speaker-socials">
+    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+      <CustomImage
+        mobileImgUrl="/assets/instagram_orange.svg"
+        desktopImgUrl="/assets/instagram_orange.svg"
+        alt="Instagram"
+        width={24}
+        height={24}
+      />
+    </a>
+    <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+      <CustomImage
+        mobileImgUrl="/assets/github_orange.svg"
+        desktopImgUrl="/assets/github_orange.svg"
+        alt="GitHub"
+        width={24}
+        height={24}
+      />
+    </a>
+    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+      <CustomImage
+        mobileImgUrl="/assets/linkedin_orange.svg"
+        desktopImgUrl="/assets/linkedin_orange.svg"
+        alt="LinkedIn"
+        width={24}
+        height={24}
+      />
+    </a>
+  </div>
+</div>
+
+<style>
+  .speaker-card {
+    background-color: antiquewhite;
+    border: 3px solid #f97700;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 278px;
+    min-width: 278px;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+
+  .speaker-card:hover {
+    transform: scale(1.02);
+  }
+  .speaker-image {
+    border: 1.5px solid #f97700;
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+  }
+  .speaker-name {
+    font-size: 2rem;
+    color: #ff7a00;
+    margin: 0.5rem 0;
+  }
+  .speaker-role {
+    color: #294c60;
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+  }
+  .speaker-socials a {
+    margin: 0 0.5rem;
+  }
+  .speaker-socials img {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 400px) {
+    .speaker-card {
+      max-width: 240px;
+      min-width: 240px;
+    }
+  }
+</style>

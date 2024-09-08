@@ -1,10 +1,15 @@
 ---
+import "../styles/normalize.css";
+
+import Navbar from '../components/Navbar.astro';
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
 
+import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -12,27 +17,42 @@ import Footer from "../components/Footer.astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Bienvenidos a CodeOn 2024, sumérgete a descubrir las últimas tendencias de
+    la tecnología, este evento se llevará a cabo en la Universidad Tecnológica
+    del Perú, Av. Petit Thouars." />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+
+    <link rel="shortcut icon" href="/public/favicon.svg" type="image/x-icon">
+    <link rel="icon" href="/public/favicon-96x96.png" sizes="96x96" type="image/png">
+    <link rel="icon" href="/public/favicon.svg" sizes="any" type="image/svg+xml">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Partner&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <main class="app animateUp">
+      <Navbar></Navbar>
       <slot />
+      <Footer/>
     </main>
-    <Footer />
   </body>
 </html>
 
 <style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Partner&display=swap");
-
   :root {
     --primary-font: "Poppins", sans-serif;
     --primary-color: #ff7a00;
@@ -65,7 +85,7 @@ import Footer from "../components/Footer.astro";
     width: 100%;
     /*max-width: var(--max-width);*/
     /*padding: 1rem;*/
-    padding-top: calc(var(--size-header));
+    /*padding-top: calc(var(--size-header));*/
     margin: 0 auto;
     min-height: 100vh;
     position: relative;

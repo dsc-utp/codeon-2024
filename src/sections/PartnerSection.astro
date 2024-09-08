@@ -1,0 +1,64 @@
+---
+import sponser1 from "/public/assets/sponsor.png";
+import PartnersCard from "../components/PartnersCard.astro";
+
+const partners = [
+  { imageUrl: sponser1, altText: "Sponsor 1" },
+  { imageUrl: sponser1, altText: "Sponsor 2" },
+  { imageUrl: sponser1, altText: "Sponsor 3" },
+  { imageUrl: sponser1, altText: "Sponsor 4" },
+  { imageUrl: sponser1, altText: "Sponsor 5" },
+];
+---
+
+<div>
+  <div class="utp-logo-container">
+    <p>Patrocinador Oficial</p>
+    <img src="/public/assets/logo_utp.png" alt="utp-logo"/>
+  </div>
+  <!-- TODO: AGREGAR PARTNERS -->
+  <!-- <section class="container">
+    {partners.map((partner) => (
+      <PartnersCard imageUrl={partner.imageUrl} altText={partner.altText} />
+    ))}
+  </section> -->
+</div>
+
+<style>
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .utp-logo-container {
+    margin: 10px 0px 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .utp-logo-container img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+  }
+
+  .utp-logo-container p {
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .utp-logo-container img {
+      max-width: 300px;
+    }
+  }
+</style>
