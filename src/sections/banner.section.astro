@@ -20,12 +20,17 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
       alt="codeon-slice"
     />
     <p class="subtitle">09 de noviembre</p>
-    <img
-      class="codeonlogo"
-      src="/assets/banner_logo.svg"
-      alt="CodeOn2024"
-    />
-    <button class="codeon-btn"> Auditorio UTP, Av. Petit Thouars </button>
+    <img class="codeonlogo" src="/assets/banner_logo.svg" alt="CodeOn2024" />
+    <a
+      href="https://maps.app.goo.gl/DAtkQmH62UHxq3K47"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <button class="codeon-btn">
+        📍 Universidad Tecnológica del Perú, Auditorio Lima Sede Central - Av.
+        Petit Thouars 116, Lima, Perú
+      </button>
+    </a>
   </div>
   <TechnologiesAnimation />
 </div>
@@ -74,15 +79,20 @@ import TechnologiesAnimation from "../components/TechnologiesAnimation.astro";
     right: 0;
   }
   .codeon-btn {
+    max-width: 300px;
     margin: 10px 0;
     padding: 0.6rem;
     cursor: pointer;
     outline: none;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     color: white;
     border-radius: 20px;
-    background: linear-gradient(to right, #ff7a00, #c25f02);
+    background: #ffffff00;
+  }
+  .codeon-btn:hover{
+    color:  #ffa552;
+    text-decoration: underline;
   }
   @media (max-width: 700px) {
     .slice-left,
