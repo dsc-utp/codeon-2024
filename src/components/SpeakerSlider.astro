@@ -1,283 +1,160 @@
 ---
 import SpeakerCard from "./SpeakerCard.astro";
-import CustomImage from "./CustomImage.astro";
 
 const speakers = [
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  {
+    imageUrl: "/assets/speakersImage/Angela_Irka.jpg",
+    name: "Angela Enciso Camacho",
+    role: "Computer Society UTP",
+    socialLinks: {
+      linkedin:
+        "https://www.linkedin.com/in/angela-irka-enciso-camacho-6394281b6/",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Jose_Flores_Chamba.png",
+    name: "Jose Flores Chamba",
+    role: "Full Stack | IEEE Untels Computer Society",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/jfloresxc/",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Jimy_Dolores.jpeg",
+    name: "Jimy Dolores",
+    role: "Frontend Architect | Angular Perú",
+    socialLinks: {
+      instagram: "https://www.instagram.com/jimydolores",
+      github: "https://github.com/jimyhdolores",
+      linkedin: "https://www.linkedin.com/in/jimyhuachodolores",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Jose_Guerra.png",
+    name: "Jose Guerra Martinez",
+    role: "Presales Specialist Data/AI | Developer Student Clubs UNI",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/jose-carlos-guerra-martinez/",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Kerk_Lopez_Izaguirre.png",
+    name: "Keneth Lopez Izaguirre",
+    role: "CEO EduKuna",
+    socialLinks: {
+      instagram: "https://www.instagram.com/kenethlopezzz/",
+      linkedin: "https://www.linkedin.com/in/keneth-lopez/",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Javier_Esmith_Blanco.jpg",
+    name: "Javier Blanco Chuquizuta",
+    role: "Frontend Developer | Cloud | Backend Developer",
+    socialLinks: {
+      github: "https://github.com/javierblancoch",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Katherine_Galiccio.jpg",
+    name: "Katherine Patricia Vildoso",
+    role: "WeLoveGames",
+    socialLinks: {
+      instagram: "https://www.instagram.com/ohekate",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/KAMITTO_NUÑEZ.jpg",
+    name: "Soleil Nuñez Pumacallahui",
+    role: "IncideTec Perú",
+    socialLinks: {
+      instagram: "https://www.instagram.com/sol.kamitto/",
+      linkedin: "https://www.linkedin.com/in/soleilkamitto",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/NapsterDev.png",
+    name: "Homer López Vidal",
+    role: "Frontend Developer | Software Engineer",
+    socialLinks: {
+      github: "https://github.com/napsterh",
+      linkedin: "https://www.linkedin.com/in/homer-lopez/",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Gian_Sandoval.jpg",
+    name: "Giancarlos Sandoval Tume",
+    role: "Flutter Piura",
+    socialLinks: {
+      github: "https://github.com/GianSandoval5",
+      linkedin: "https://www.linkedin.com/in/giansandoval",
     },
-    {
-        imageUrl: "/assets/speakersImage/CristianOscco_Image.png",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/Yeder.jpeg",
+    name: "Yeder Laura Vicente ",
+    role: "Data learning lab | IEEE CS utp",
+    socialLinks: {
+      instagram: "https://www.instagram.com/Yeder.dev",
+      linkedin: "https://www.linkedin.com/in/yederlvicente",
     },
-    {
-        imageUrl: "/assets/github_orange.svg",
-        name: "Cristian Oscco",
-        role: "Frontend Developer | GCP | CEO Edomo",
-        socialLinks: {
-            instagram: "https://www.instagram.com/cristiandaos",
-            github: "https://github.com/cristiandaos",
-            linkedin: "https://www.linkedin.com/in/cristiandaos",
-        },
+  },
+  {
+    imageUrl: "/assets/speakersImage/alfredo_amez.jpg",
+    name: "Alfredo Amez Mendes",
+    role: "Customer Intelligence | Marketing Analytics",
+    socialLinks: {
+      linkedin: "https://www.linkedin.com/in/afredoamez/",
     },
-    // Añadir más ponentes aquí...
+  },
 ];
-
-const left_btn_slider = "/assets/icon-park-solid_left-c.svg";
-const right_btn_slider = "/assets/icon-park-solid_right-c.svg";
 ---
 
-<div class="slider">
-    <button class="slider-btn prev">
-        <CustomImage
-            mobileImgUrl={left_btn_slider}
-            desktopImgUrl={left_btn_slider}
-            alt="Previous slide"
-            width={24}
-            height={24}
-        />
-    </button>
-    <div class="slider-track">
-        {speakers.map((speaker, index) => (
-            <SpeakerCard {...speaker} />
-        ))}
-    </div>
-    <button class="slider-btn next">
-        <CustomImage
-            mobileImgUrl={right_btn_slider}
-            desktopImgUrl={right_btn_slider}
-            alt="Next slide"
-            width={24}
-            height={24}
-        />
-    </button>
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {
+      speakers.map((speaker, index) => (
+        <div class="swiper-slide">
+          <SpeakerCard {...speaker} />
+        </div>
+      ))
+    }
+  </div>
+  <br />
+  <br />
+  <div class="swiper-pagination"></div>
 </div>
 
-<style>
-    .slider {
-        padding-bottom: 1rem;
-        position: relative;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-    }
-    .slider-btn {
-        padding: 0 5px 0 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1;
-    }
-    .slider-track {
-        display: flex;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        scroll-behavior: smooth;
-        box-sizing: border-box;
-        -webkit-overflow-scrolling: touch;
-    }
-    .slider-track > * {
-        flex: 0 0 auto;
-        margin: 0 0.5rem;
-        box-sizing: border-box;
-    }
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script is:inline>
+  new Swiper(".swiper", {
+    slidesPerView: 1,
+    slidesPerGroupSkip: 1,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
 
-    @media (min-width: 1200px) {
-        .slider-track {
-            padding: 0 1rem;
-        }
-        .slider-track > * {
-            flex: 0 0 calc(25% - 1rem);
-        }
-    }
-    @media (min-width: 992px) and (max-width: 1199px) {
-        .slider-track {
-            padding: 0 0.75rem;
-        }
-        .slider-track > * {
-            flex: 0 0 calc(33.33% - 1.5rem);
-        }
-    }
-    @media (min-width: 768px) and (max-width: 991px) {
-        .slider-track {
-            padding: 0 0.5rem;
-        }
-        .slider-track > * {
-            flex: 0 0 calc(50% - 1rem);
-        }
-    }
-    @media (max-width: 767px) {
-        .slider-track {
-            padding: 0 0.25rem;
-        }
-        .slider-track > * {
-            flex: 0 0 calc(100% - 0.5rem);
-        }
+<style>
+    :root{
+        --swiper-pagination-color: #ff7a00;
     }
 </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const track = document.querySelector('.slider-track');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-
-        let currentPosition = 0;
-        let cardWidth = 0;
-        let visibleCardsCount = 0;
-
-        const updateCardWidth = () => {
-            const card = track?.querySelector('.speaker-card');
-            if (!card) return 0;
-            const style = window.getComputedStyle(card);
-            return (card as HTMLElement).offsetWidth + parseFloat(style.marginRight) + parseFloat(style.marginLeft);
-        };
-
-        const getVisibleCardsCount = () => {
-            const width = window.innerWidth;
-            if (width >= 1200) return 4;
-            if (width >= 992) return 3;
-            if (width >= 768) return 2;
-            return 1;
-        };
-
-        const updateTrackPosition = () => {
-            track?.scrollTo({ left: currentPosition, behavior: 'smooth' });
-        };
-
-        const resetPositionIfNeeded = () => {
-            const maxScrollPosition = (track?.scrollWidth ?? 0) - (track?.clientWidth?? 0);
-            if (currentPosition > maxScrollPosition) {
-                currentPosition = maxScrollPosition;
-                updateTrackPosition();
-            }
-        };
-
-        prevBtn?.addEventListener('click', () => {
-            cardWidth = updateCardWidth();
-            visibleCardsCount = getVisibleCardsCount();
-            currentPosition = Math.max(currentPosition - cardWidth * visibleCardsCount, 0);
-            updateTrackPosition();
-        });
-
-        nextBtn?.addEventListener('click', () => {
-            cardWidth = updateCardWidth();
-            visibleCardsCount = getVisibleCardsCount();
-            const maxScrollPosition = (track?.scrollWidth ?? 0) - (track?.clientWidth?? 0);
-            currentPosition = Math.min(currentPosition + cardWidth * visibleCardsCount, maxScrollPosition);
-            updateTrackPosition();
-        });
-
-        window.addEventListener('resize', () => {
-            cardWidth = updateCardWidth();
-            visibleCardsCount = getVisibleCardsCount();
-            resetPositionIfNeeded();
-        });
-
-        cardWidth = updateCardWidth();
-        visibleCardsCount = getVisibleCardsCount();
-    });
-</script>
