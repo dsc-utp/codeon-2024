@@ -9,12 +9,13 @@ import PartnerSection from "../sections/PartnerSection.astro";
 import CallToAction from "../components/CallToAction.astro";
 import BannerSection from "../sections/banner.section.astro";
 import BannerInfoSection from "../sections/banner-info.section.astro";
+import ScheduleSection from "../sections/ScheduleSection.astro";
 ---
 
 <Layout title="CodeOn 2024">
   <main>
-    <BannerSection/>
-    <BannerInfoSection/>
+    <BannerSection />
+    <BannerInfoSection />
     <div class="container-register" id="register">
       <div class="register">
         <p class="title">Registro</p>
@@ -51,10 +52,10 @@ import BannerInfoSection from "../sections/banner-info.section.astro";
     </div>
     <br />
     <Count />
-    <!-- TODO: DESCOMENTAR CUANDO SE TENGA AGENDA -->
-    <!-- <div class="agenda" id="agenda">
+    <div class="agenda agenda_container" id="agenda">
       <p class="title">Agenda</p>
-    </div> -->
+      <ScheduleSection />
+    </div>
     <br />
     <!-- TODO: DESCOMENTAR CUANDO HAYA SPEAKERS - FALTA RESPONSIVE DE CARDS SPEAKERS -->
     <div class="speakers" id="speakers">
@@ -148,6 +149,10 @@ import BannerInfoSection from "../sections/banner-info.section.astro";
     z-index: 5;
     width: 100%;
     background: linear-gradient(to bottom, #ff7a00, #994900);
+  }
+
+  .agenda_container {
+    margin-top: 70px;
   }
   .register {
     width: 100%;
