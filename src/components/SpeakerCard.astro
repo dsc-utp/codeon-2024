@@ -6,9 +6,9 @@ export interface Props {
   name: string;
   role: string;
   socialLinks: {
-    instagram: string;
-    github: string;
-    linkedin: string;
+    instagram?: string;
+    github?: string;
+    linkedin?: string;
   };
 }
 
@@ -20,33 +20,53 @@ const { imageUrl, name, role, socialLinks } = Astro.props;
   <h3 class="speaker-name">{name}</h3>
   <p class="speaker-role">{role}</p>
   <div class="speaker-socials">
-    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
-      <CustomImage
-        mobileImgUrl="/assets/instagram_orange.svg"
-        desktopImgUrl="/assets/instagram_orange.svg"
-        alt="Instagram"
-        width={24}
-        height={24}
-      />
-    </a>
-    <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
-      <CustomImage
-        mobileImgUrl="/assets/github_orange.svg"
-        desktopImgUrl="/assets/github_orange.svg"
-        alt="GitHub"
-        width={24}
-        height={24}
-      />
-    </a>
-    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
-      <CustomImage
-        mobileImgUrl="/assets/linkedin_orange.svg"
-        desktopImgUrl="/assets/linkedin_orange.svg"
-        alt="LinkedIn"
-        width={24}
-        height={24}
-      />
-    </a>
+    {
+      socialLinks.instagram && (
+        <a
+          href={socialLinks.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CustomImage
+            mobileImgUrl="/assets/instagram_orange.svg"
+            desktopImgUrl="/assets/instagram_orange.svg"
+            alt="Instagram"
+            width={24}
+            height={24}
+          />
+        </a>
+      )
+    }
+    {
+      socialLinks.github && (
+        <a href={socialLinks.github} target="_blank" rel="noopener noreferrer">
+          <CustomImage
+            mobileImgUrl="/assets/github_orange.svg"
+            desktopImgUrl="/assets/github_orange.svg"
+            alt="GitHub"
+            width={24}
+            height={24}
+          />
+        </a>
+      )
+    }
+    {
+      socialLinks.linkedin && (
+        <a
+          href={socialLinks.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CustomImage
+            mobileImgUrl="/assets/linkedin_orange.svg"
+            desktopImgUrl="/assets/linkedin_orange.svg"
+            alt="LinkedIn"
+            width={24}
+            height={24}
+          />
+        </a>
+      )
+    }
   </div>
 </div>
 
@@ -57,10 +77,8 @@ const { imageUrl, name, role, socialLinks } = Astro.props;
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
-    max-width: 278px;
-    min-width: 278px;
-    margin-left: 0.4em;
-    margin-right: 0.4em;
+    width: 100%;
+    height: 420px;
     transition: transform 0.3s;
     cursor: pointer;
   }
@@ -70,9 +88,10 @@ const { imageUrl, name, role, socialLinks } = Astro.props;
   }
   .speaker-image {
     border: 1.5px solid #f97700;
-    border-radius: 50%;
     width: 150px;
-    height: auto;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
   }
   .speaker-name {
     font-size: 2rem;
@@ -90,12 +109,5 @@ const { imageUrl, name, role, socialLinks } = Astro.props;
   .speaker-socials img {
     width: 24px;
     height: 24px;
-  }
-
-  @media (max-width: 400px) {
-    .speaker-card {
-      max-width: 240px;
-      min-width: 240px;
-    }
   }
 </style>

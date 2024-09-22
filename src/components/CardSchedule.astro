@@ -1,0 +1,82 @@
+---
+interface Props {
+  hour: String,
+  title: String,
+  text: String,
+}
+const { hour, title, text } = Astro.props;
+---
+
+<div class="container">
+  <div class="card-header">
+    <p>{hour}</p>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p class="card-text">{text}</p>
+  </div>
+</div>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 30px 0px;
+    background-color: transparent;
+    padding: 16px 16px 30px 16px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    align-items: center; /* Alinea los elementos al centro en el eje vertical */
+  }
+
+  .card-header {
+    grid-column: span 3;
+  }
+
+  .card-header p {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .card-body {
+    grid-column: span 9;
+    text-align: left;
+  }
+
+  .card-title {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .card-text {
+    color: white;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  @media (min-width: 900px) {
+    .card-header {
+      grid-column: span 2;
+    }
+
+    .card-body {
+      grid-column: span 10;
+    }
+
+    .card-header p {
+      font-size: 16px;
+    }
+
+    .card-title {
+      font-size: 24px;
+    }
+
+    .card-text {
+      font-size: 20px;
+    }
+  }
+</style>
