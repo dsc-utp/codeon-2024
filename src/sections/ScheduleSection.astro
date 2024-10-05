@@ -1,26 +1,175 @@
 ---
 import CardSchedule from "../components/CardSchedule.astro";
 
-const talks = [
-  { time: "9:30 AM", speaker: "Cristian Oscco", talkName: "¡Empieza Codeon 2024!" },
-  { time: "9:45 AM", speaker: "Gianmarco Guerrero", talkName: "Notion Academy: Gestiona tus estudios y supera tus metas académicas" },
-  { time: "10:20 AM", speaker: "Ángela Enciso", talkName: "Optimización de aplicaciones Android con Firebase" },
-  { time: "11:10 AM", speaker: "Soleil Nuñez", talkName: "Del sueño al impacto: Pasos para iniciar y crecer una startup exitosa" },
-  { time: "1:15 PM", speaker: "Homer López", talkName: "Chatbots Inteligentes usando Gemini AI, Firebase y React" },
-  { time: "2:05 PM", speaker: "Jimy Dolores", talkName: "Microfrontend con Angular y Module Federation" },
-  { time: "3:10 PM", speaker: "Keneth Lopez", talkName: "EduKuna: Educación de calidad y accesible mediante el software educativo" },
-  { time: "3:45 PM", speaker: "Jose Guerra", talkName: "Sumérgete en el mundo enterprise de los datos con Google Cloud" },
-  { time: "4:35 PM", speaker: "Javier Blanco", talkName: "AWS Serverless y cómo prevenir incursiones en el mundo cloud" },
-  { time: "5:20 PM", speaker: "Katherine Patricia Vildoso", talkName: "¿Qué opciones tengo para trabajar en videojuegos?" },
-  { time: "5:50 PM", speaker: "Cristian Oscco", talkName: "Cierre del evento" }
+const talks1 = [
+  {
+    time: "9:30 AM",
+    speaker: "Cristian Oscco",
+    talkName: "¡Empieza Codeon 2024!",
+  },
+  {
+    time: "9:45 AM",
+    speaker: "Gianmarco Guerrero",
+    talkName:
+      "Notion Academy: Gestiona tus estudios y supera tus metas académicas",
+  },
+  {
+    time: "10:20 AM",
+    speaker: "Ángela Enciso",
+    talkName: "Optimización de aplicaciones Android con Firebase",
+  },
+  {
+    time: "11:10 AM",
+    speaker: "Soleil Nuñez",
+    talkName:
+      "Del sueño al impacto: Pasos para iniciar y crecer una startup exitosa",
+  },
+  {
+    time: "1:15 PM",
+    speaker: "Homer López",
+    talkName: "Chatbots Inteligentes usando Gemini AI, Firebase y React",
+  },
+  {
+    time: "2:05 PM",
+    speaker: "Jimy Dolores",
+    talkName: "Microfrontend con Angular y Module Federation",
+  },
+  {
+    time: "3:10 PM",
+    speaker: "Keneth Lopez",
+    talkName:
+      "EduKuna: Educación de calidad y accesible mediante el software educativo",
+  },
+  {
+    time: "3:45 PM",
+    speaker: "Jose Guerra",
+    talkName: "Sumérgete en el mundo enterprise de los datos con Google Cloud",
+  },
+  {
+    time: "4:35 PM",
+    speaker: "Javier Blanco",
+    talkName: "AWS Serverless y cómo prevenir incursiones en el mundo cloud",
+  },
+  {
+    time: "5:20 PM",
+    speaker: "Katherine Patricia Vildoso",
+    talkName: "¿Qué opciones tengo para trabajar en videojuegos?",
+  },
+  { time: "5:50 PM", speaker: "Cristian Oscco", talkName: "Cierre del evento" },
 ];
-
+const talks2 = [
+  {
+    time: "10:20 AM",
+    speaker: "Gian Sandoval",
+    talkName:
+      "Flutter: Revolucionando el Desarrollo Móvil y Firebase, el Backend Sin Límites",
+  },
+  {
+    time: "11:10 AM",
+    speaker: "Jose Flores",
+    talkName: "Clean Code y qué tan importante es para el Desarrollo Web",
+  },
+  {
+    time: "1:15 PM",
+    speaker: "Gianmarcos Espinoza Pachas",
+    talkName: "Perfiles de Big Data: Claves para el Éxito Empresarial",
+  },
+  {
+    time: "2:05 PM",
+    speaker: "Jaime Fernández Chávez",
+    talkName: "Emprendimiento digital desde cero",
+  },
+  {
+    time: "3:10 PM",
+    speaker: "Felix Gonzalo Castro Cubas",
+    talkName: "View Transitions API con Astro",
+  },
+  {
+    time: "3:45 PM",
+    speaker: "Alfredo Diego Amez Mendes",
+    talkName: "Retail Intelligence: El Cliente como foco principal",
+  },
+  {
+    time: "4:35 PM",
+    speaker: "Yeder José Laura Vicente",
+    talkName: "Procesos NLP con modelos pre entrenados",
+  },
+];
 ---
 
-<div>
-  {talks.map((e)=>(
-  <CardSchedule title={e.talkName} text={e.speaker} hour={e.time} />
-  ))}
+<div class="agenda">
+  <p class="title">Agenda</p>
+  <ul class="tabs">
+    <li class="tab active" id="auditorio-btn">🎤 Auditorio</li>
+    <li class="tab" id="aula-btn">🛠️ Aula</li>
+  </ul>
+  <div id="schedule1">
+    {
+      talks1.map((e) => (
+        <CardSchedule title={e.talkName} text={e.speaker} hour={e.time} />
+      ))
+    }
+  </div>
+  <div class="none" id="schedule2">
+    {
+      talks2.map((e) => (
+        <CardSchedule title={e.talkName} text={e.speaker} hour={e.time} />
+      ))
+    }
+  </div>
 </div>
 
-<style></style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const auditorioBtn = document.getElementById("auditorio-btn");
+    const aulaBtn = document.getElementById("aula-btn");
+    const schedule1 = document.getElementById("schedule1");
+    const schedule2 = document.getElementById("schedule2");
+
+    auditorioBtn?.addEventListener("click", () => {
+      schedule1?.classList.remove("none");
+      schedule2?.classList.add("none");
+      auditorioBtn.classList.add("active");
+      aulaBtn?.classList.remove("active");
+    });
+
+    aulaBtn?.addEventListener("click", () => {
+      schedule1?.classList.add("none");
+      schedule2?.classList.remove("none");
+      aulaBtn.classList.add("active");
+      auditorioBtn?.classList.remove("active");
+    });
+  });
+</script>
+
+<style>
+  .agenda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .title {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .tabs {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 2rem;
+  }
+  .tab {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  .tab.active {
+    border-bottom: 1px solid var(--text-color);
+  }
+  .none {
+    display: none;
+  }
+</style>
