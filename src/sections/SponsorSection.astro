@@ -1,11 +1,16 @@
 ---
 import SponsorsSlide from "../components/SponsorsSlide.astro";
----
+const sponsors = [
+  { imageUrl: "/assets/sponsors/Notion.svg", altText: "Notion Peru", slot: "sponsor1" },
+  { imageUrl: "/assets/sponsors/edomo.svg", altText: "Edomo", slot: "sponsor2" },
+];
 
+
+---
 <section id="sponsors">
   <h2>Sponsors</h2>
   <p>¡Conoce a nuestros sponsors!</p>
-  <SponsorsSlide type="left" />
+  <SponsorsSlide type="left" sponsors={sponsors} />
 </section>
 
 <style>

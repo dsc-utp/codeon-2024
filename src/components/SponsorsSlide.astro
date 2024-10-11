@@ -3,17 +3,13 @@ import SponsorsCard from "./SponsorsCard.astro";
 
 interface Props {
   type: string;
+  sponsors: {
+    imageUrl:string;
+    altText: string;
+    slot: string;
+  }[]
 }
-const { type } = Astro.props;
-
-const sponsors = [
-  { imageUrl: "/assets/comunities/IncideTecPerú.png", altText: "IncideTecPerú", slot: "sponsor1" },
-  { imageUrl: "/assets/comunities/quipuml.png", altText: "QuipuML", slot: "sponsor2" },
-  { imageUrl: "/assets/comunities/gdg_callao.svg", altText: "gdg callao", slot: "sponsor3" },
-  { imageUrl: "/assets/comunities/gdgopenlima.png", altText: "gdg open lima", slot: "sponsor4" },
-  { imageUrl: "/assets/comunities/DSRP_BLANCO.png", altText: "DataScience", slot: "sponsor5" },
-  { imageUrl: "/assets/comunities/dsc_uni.png", altText: "DSC UNI", slot: "sponsor6" },
-];
+const { type, sponsors } = Astro.props;
 ---
 
 <div class="marquee">
